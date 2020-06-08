@@ -16,11 +16,13 @@ __email__ = "alumnos@inove.com.ar"
 __version__ = "1.1"
 
 import random
+import math
 
 
 def ej1():
     # Ejercicios con funciones del sistema
     numeros = [2, 4, 6, 8, 10, 12]
+    print(numeros)
 
     '''
     Realice una funcion llamada "promedio" la cual
@@ -41,6 +43,23 @@ def ej1():
     imprima en pantalla el resultado
     '''
 
+
+def promedio():
+    '''Devuelve el promedio de una lista'''
+
+    numeros = [2, 4, 6, 8, 10, 12]
+    sumatoria_numeros = 0
+    cantidad_numeros = 0
+    
+    if len(numeros) > 0:
+        for numero in numeros:
+            sumatoria_numeros += numero
+        for numero in numeros:
+            cantidad_numeros += 1
+        promedio = sumatoria_numeros / cantidad_numeros
+        print("El promedio de la lista es:", promedio)
+    else:
+        print("Ha ingresado una lista vacia")
 
 def ej2():
     # Ejercicios con modulos del sistema
@@ -87,7 +106,35 @@ def ej2():
     # raiz_cuadrada_2 = ....
 
 
-def ej3():
+def lista_aleatoria(inicio=0, fin=10, cantidad=3):
+
+    inicio = 0
+    fin = 10
+    cantidad = 3
+
+    numero = random.randrange(inicio, fin+1)
+    print("El numero aleatorio es:", numero)
+
+    lista = list(range(inicio, fin))
+    print("La lista de numeros es:", lista)
+
+    lista_aleatoria = random.sample(lista,cantidad)
+    print("La lista aleatoria es:", lista_aleatoria)
+
+    numero_1 = random.choice(lista_aleatoria)
+    numero_2 = random.choice(lista_aleatoria)
+
+    print("El primer numero aleatorio es:", numero_1)
+    print("El segundo numero aleatorio es:", numero_2)
+
+    raiz_cuadrada_1 = numero_1 ** 0.5 #elevo a la potencia 0.5 es = que la raiz cuadrada
+    raiz_cuadrada_2 = math.sqrt(numero_2)
+    print("La raiz cuadrada de:", numero_1, "es", raiz_cuadrada_1)
+    print("La raiz cuadrada de:", numero_2, "es", raiz_cuadrada_2)
+
+
+
+def ordenar():
     # Ejercicios de listas y métodos
     numeros = [2, 4, 6, 8, 10, 12]
 
@@ -102,6 +149,11 @@ def ej3():
     en la función afectan a la variable pasada como argumento)
 
     '''
+    lista_ordenada = sorted(numeros)
+    print("La lista ordenada de mayor a menor es:", lista_ordenada)
+
+    lista_ordenada_2 = sorted(numeros, reverse = True)
+    print("la lista ordenada de menor a mayor es:", lista_ordenada_2)
 
 
 def ej4():
@@ -153,8 +205,10 @@ def ej5():
 
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
-    ej1()
+    #ej1()
+    #promedio()
     #ej2()
-    #ej3()
+    #lista_aleatoria()
+    #ordenar()
     #ej4()
     #ej5()
