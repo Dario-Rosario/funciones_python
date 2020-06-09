@@ -23,6 +23,7 @@ def ej1():
     # Ejercicios con funciones del sistema
     numeros = [2, 4, 6, 8, 10, 12]
     print(numeros)
+    promedio(numeros)
 
     '''
     Realice una funcion llamada "promedio" la cual
@@ -44,10 +45,10 @@ def ej1():
     '''
 
 
-def promedio():
+def promedio(numeros):
     '''Devuelve el promedio de una lista'''
 
-    numeros = [2, 4, 6, 8, 10, 12]
+    numeros = numeros
     sumatoria_numeros = 0
     cantidad_numeros = 0
     
@@ -61,15 +62,20 @@ def promedio():
     else:
         print("Ha ingresado una lista vacia")
 
+
 def ej2():
     # Ejercicios con modulos del sistema
-    inicio = 0
+
+    inicio = 2
     fin = 10
+    cantidad = 5
+    numeros = lista_aleatoria(inicio, fin, cantidad)    
 
     # Ejemplo de como obtener un numero aleatorio
     # entre inicio y fin
     # inicio <= numero <= fin
-    numero = random.randrange(inicio, fin+1)
+    #numero_1 = random.randrange(inicio, fin+1)
+    #numero_2 = random.randrange(inicio, fin+1)
     # Documentación oficial de random
     # https://docs.python.org/3.7/library/random.html
 
@@ -104,39 +110,40 @@ def ej2():
 
     # raiz_cuadrada_1 = ....
     # raiz_cuadrada_2 = ....
-
-
-def lista_aleatoria(inicio=0, fin=10, cantidad=3):
-
-    inicio = 0
-    fin = 10
-    cantidad = 3
-
-    numero = random.randrange(inicio, fin+1)
-    print("El numero aleatorio es:", numero)
-
-    lista = list(range(inicio, fin))
-    print("La lista de numeros es:", lista)
-
-    lista_aleatoria = random.sample(lista,cantidad)
-    print("La lista aleatoria es:", lista_aleatoria)
-
-    numero_1 = random.choice(lista_aleatoria)
-    numero_2 = random.choice(lista_aleatoria)
+   
+    numero_1 = random.choice(numeros)
+    numero_2 = random.choice(numeros)
 
     print("El primer numero aleatorio es:", numero_1)
     print("El segundo numero aleatorio es:", numero_2)
 
     raiz_cuadrada_1 = numero_1 ** 0.5 #elevo a la potencia 0.5 es = que la raiz cuadrada
     raiz_cuadrada_2 = math.sqrt(numero_2)
+
     print("La raiz cuadrada de:", numero_1, "es", raiz_cuadrada_1)
     print("La raiz cuadrada de:", numero_2, "es", raiz_cuadrada_2)
 
 
 
-def ordenar():
+def lista_aleatoria(inicio, fin, cantidad):
+
+    inicio = inicio
+    fin = fin
+    cantidad = cantidad
+
+    lista = list(range(inicio, fin))
+    print("La lista de numeros es:", lista)
+
+    lista_aleatoria = random.sample(lista,cantidad)
+    print("La lista aleatoria es:", lista_aleatoria)
+   
+
+def ej3():
     # Ejercicios de listas y métodos
-    numeros = [2, 4, 6, 8, 10, 12]
+    numeros = [2, 4, 40, 8, 10, 12]
+
+    ordenar(numeros)
+    
 
     '''
     Generar una una nueva funcion que se llame "ordenar",
@@ -149,12 +156,14 @@ def ordenar():
     en la función afectan a la variable pasada como argumento)
 
     '''
+    
+
+
+def ordenar(numeros):
+
     lista_ordenada = sorted(numeros)
-    print("La lista ordenada de mayor a menor es:", lista_ordenada)
-
-    lista_ordenada_2 = sorted(numeros, reverse = True)
-    print("la lista ordenada de menor a mayor es:", lista_ordenada_2)
-
+    print(lista_ordenada)
+   
 
 def ej4():
     # Ejercicios de listas y métodos
@@ -177,6 +186,17 @@ def ej4():
     # lista_numeros = lista_aleatoria(...,...,cantidad_numeros)
     # Luego quiero averiguar cuantas veces se repite el numero 3
     # cantidad_tres = contar(lista_numeros, 3)
+
+
+def contar():
+
+   inicio = 0
+   fin = 10
+   cantidad_numeros = 5
+
+   lista_numeros = lista
+   print(lista_numeros)    
+
 
 def ej5():
     # Ejercicios de listas y métodos
@@ -209,6 +229,7 @@ if __name__ == '__main__':
     #promedio()
     #ej2()
     #lista_aleatoria()
-    #ordenar()
+    ej3()
     #ej4()
+    #contar()
     #ej5()
