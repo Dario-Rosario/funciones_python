@@ -51,7 +51,7 @@ def promedio(numeros):
     numeros = numeros
     sumatoria_numeros = 0
     cantidad_numeros = 0
-    
+    promedio = 0
     if len(numeros) > 0:
         for numero in numeros:
             sumatoria_numeros += numero
@@ -61,6 +61,11 @@ def promedio(numeros):
         print("El promedio de la lista es:", promedio)
     else:
         print("Ha ingresado una lista vacia")
+    # Inove: La funcion está perfecta! Pero para que a futura
+    # la podamos utilizar en un programa necesitamos que la función
+    # nos "retorne" el promedio para poder usar ese valor
+    # Para eso nos hace falta agregar la sentencia "return"
+    return promedio  # De esta forma el programa puede usar el promedio
 
 
 def ej2():
@@ -133,6 +138,29 @@ def lista_aleatoria(inicio, fin, cantidad):
 
     lista_aleatoria = random.sample(lista,cantidad)
     print("La lista aleatoria es:", lista_aleatoria)
+    
+    # La función implementada es correcta, pero hay casos en donde
+    # falla, y lo verás más adelante en los ejercicio_practica
+    # En este caso estás generando una lista de inicia a fin
+    # y solicitando una determinada cantidad de elementos
+    # pero que pasa si mi lista va del 1 al 5 y pido 10 elementos?
+    # Esto es totalmente factible y el resultado esperado de esta 
+    # lista podría ser algo como esto:
+    # lista = [1,4,2,2,1,5,3,2,1,4]
+    # Es una lista que los numeros van del 1 al 5 que contiene 10 elementos
+    # para poder hacer esto necesitamos generar cada número aleatorio por
+    # separado, para ello debemos utilizar random.randrange o random.randint
+    # Aconsejo utilizar randint, cada vez que invoques esté metodo te devolverá
+    # un número en el rango especificado, y esta accion la deberás repetir
+    # para la cantidad de elemetnos deseados
+    # lista = []
+    # bucle que recorra "cantidad" elementos --> for i in range(cantidad)
+    #    numero_aleatorio = random.randinit(inicio,fin)
+    #    lista.append(numero_aleatorio)
+    # Terminado en bucle tendremos nuestra "lista" cargada, pero recordar
+    # que hace falta "retornarla" como parámetro para que el sistema pueda
+    # usarla
+    # return lista
   
        
 
